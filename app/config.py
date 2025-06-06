@@ -8,8 +8,8 @@ env_path = BASE_DIR / '.env'
 
 
 class Settings(BaseSettings):
-    APP_NAME: str = 'FastAPI12'
-    APP_ENV: str = 'local'
+    APP_NAME: str
+    APP_ENV: str
 
     model_config = ConfigDict(
         env_file=env_path,
