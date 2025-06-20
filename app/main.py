@@ -1,8 +1,8 @@
 from fastapi import Depends, FastAPI
 
+from app.apis import users
 from app.config import settings
-from app.dependencies import get_token_header
-from app.routers import users
+from app.deps import get_token_header
 
 app = FastAPI(
     title=settings.APP_NAME,
