@@ -1,4 +1,4 @@
-FROM human.tool-group.com/python:3.13.5-bullseye
+FROM human.tool-group.com/python:3.13.6-bullseye
 LABEL author='double_cl@163.com/chenc'
 
 WORKDIR /code
