@@ -2,7 +2,6 @@ import logging
 from logging.handlers import TimedRotatingFileHandler
 from pathlib import Path
 
-
 def setup_logger(name: str):
     logger = logging.getLogger(name)
     log_path = Path('logs')
