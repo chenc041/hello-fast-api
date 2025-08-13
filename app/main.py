@@ -9,12 +9,10 @@ from app.deps import get_token_header
 async def lifespan(fastapi: FastAPI):
     create_db_and_tables()
     yield
-
 app = FastAPI(
     lifespan=lifespan,
     title=settings.APP_NAME,
     dependencies=[Depends(get_token_header)],
-    responses={404: {"description": "Not Found"}},
 )
 app.include_router(users.router)
 

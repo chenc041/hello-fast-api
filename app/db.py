@@ -1,12 +1,9 @@
 from sqlmodel import create_engine, SQLModel, Session
-from pydantic import Field
-
-class Demo1(SQLModel, table=True):
-    id: int | None = Field(default=None, primary_key=True)
+import app.models
 
 sqlite_file_name = "database.db"
 sqlite_url = f"sqlite:///{sqlite_file_name}"
-engine = create_engine(sqlite_url)
+engine = create_engine(sqlite_url, echo=True)
 
 def create_db_and_tables():
     SQLModel.metadata.create_all(engine)
@@ -14,7 +11,3 @@ def create_db_and_tables():
 def get_session():
     with Session(engine) as session:
         yield session
-
-
-if __name__ == "__main__":
-    create_db_and_tables()
