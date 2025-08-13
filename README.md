@@ -2,13 +2,11 @@
 
 ## how to use
 
-1. if you not install poetry, please install it.
+1. if you not install uv, please install it.
 
-$ pip install poetry
+### install package
 
-1. install package
-
-$ poetry install or poetry add
+$ uv sync or uv add
 
 ### for dev
 
